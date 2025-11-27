@@ -1,0 +1,63 @@
+{
+  "expo": {
+    "name": "VerzekAutoTrader",
+    "slug": "verzek-autotrader",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "verzek-app",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0A0E27"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.verzek.trader"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0A0E27"
+      },
+      "package": "com.verzek.trader",
+      "permissions": [
+        "INTERNET",
+        "VIBRATE",
+        "RECEIVE_BOOT_COMPLETED"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-secure-store",
+      "expo-font",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#00D4AA"
+        }
+      ]
+    ],
+    "updates": {
+      "enabled": true,
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/3e25ab8c-b332-4aaa-8561-08c18d9480a5"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "3e25ab8c-b332-4aaa-8561-08c18d9480a5"
+      }
+    },
+    "owner": "verzek"
+  }
+}
