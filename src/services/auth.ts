@@ -29,13 +29,11 @@ export const authService = {
     });
     
     if (response.data.ok) {
-      // Store tokens asynchronously without blocking
-      tokenManager.setTokens(
+      // Store tokens - await to ensure they're saved before returning
+      await tokenManager.setTokens(
         response.data.access_token || response.data.token,
         response.data.refresh_token
-      ).catch(() => {
-        // Silently fail token storage - user is already registered
-      });
+      );
     }
     
     return response.data;
