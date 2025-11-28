@@ -45,16 +45,10 @@
     ],
     "updates": {
       "enabled": true,
-      "fallbackToCacheTimeout": 0,
-      "url": "https://u.expo.dev/3e25ab8c-b332-4aaa-8561-08c18d9480a5"
+      "fallbackToCacheTimeout": 0
     },
     "runtimeVersion": {
       "policy": "appVersion"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "3e25ab8c-b332-4aaa-8561-08c18d9480a5"
-      }
     },
     "owner": "verzek"
   }
