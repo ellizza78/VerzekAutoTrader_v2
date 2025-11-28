@@ -61,11 +61,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const response = await authService.register(email, password, fullName, referralCode);
       if (response.ok) {
         setUser(response.user);
-        return { ok: true, needsVerification: !response.user.is_verified };
+        return { ok: true, needsVerification: !response.user?.is_verified };
       }
       return { ok: false, error: response.error || 'Registration failed' };
     } catch (error: any) {
-      return { ok: false, error: error.response?.data?.error || 'Registration failed' };
+      console.error('Registration error:', error);
+      const errorMessage = error.response?.data?.error 
+        || error.message 
+        || (error.response?.status === 400 ? 'Invalid registration data' : 'Network error. Please check your connection.');
+      return { ok: false, error: errorMessage };
     }
   };
 

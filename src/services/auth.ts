@@ -21,21 +21,26 @@ export const authService = {
     fullName: string,
     referralCode?: string
   ): Promise<RegisterResponse> {
-    const response = await api.post('/api/auth/register', {
-      email,
-      password,
-      full_name: fullName,
-      referral_code: referralCode,
-    });
-    
-    if (response.data.ok) {
-      await tokenManager.setTokens(
-        response.data.access_token,
-        response.data.refresh_token
-      );
+    try {
+      const response = await api.post('/api/auth/register', {
+        email,
+        password,
+        full_name: fullName,
+        referral_code: referralCode || undefined,
+      });
+      
+      if (response.data.ok) {
+        await tokenManager.setTokens(
+          response.data.access_token || response.data.token,
+          response.data.refresh_token
+        );
+      }
+      
+      return response.data;
+    } catch (error: any) {
+      console.error('Registration API error:', error.response?.data || error.message);
+      throw error;
     }
-    
-    return response.data;
   },
 
   async logout(): Promise<void> {
