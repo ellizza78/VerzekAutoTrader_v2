@@ -7,7 +7,6 @@
     "icon": "./assets/icon.png",
     "scheme": "verzek-app",
     "userInterfaceStyle": "dark",
-    "newArchEnabled": true,
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
@@ -37,10 +36,10 @@
     "plugins": [
       "expo-secure-store",
       "expo-font",
+      "expo-linear-gradient",
       [
         "expo-notifications",
         {
-          "icon": "./assets/notification-icon.png",
           "color": "#00D4AA"
         }
       ]
