@@ -12,7 +12,7 @@
     "update": "eas update --branch production"
   },
   "dependencies": {
-    "@expo/config-plugins": "^54.0.2",
+    "@expo/config-plugins": "8.0.11",
     "@expo/vector-icons": "^14.0.0",
     "@react-navigation/bottom-tabs": "^6.5.20",
     "@react-navigation/native": "^6.1.17",
@@ -28,8 +28,8 @@
     "expo-secure-store": "~13.0.1",
     "expo-status-bar": "~2.0.0",
     "expo-updates": "~0.26.0",
-    "metro": "^0.81.5",
-    "metro-config": "^0.81.5",
+    "metro": "^0.81.0",
+    "metro-config": "^0.81.0",
     "react": "18.3.1",
     "react-native": "0.76.0",
     "react-native-gesture-handler": "~2.20.0",
