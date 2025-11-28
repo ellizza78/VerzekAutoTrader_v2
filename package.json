@@ -12,6 +12,7 @@
     "update": "eas update --branch production"
   },
   "dependencies": {
+    "@expo/config-plugins": "^54.0.2",
     "@expo/vector-icons": "^14.0.0",
     "@react-navigation/bottom-tabs": "^6.5.20",
     "@react-navigation/native": "^6.1.17",

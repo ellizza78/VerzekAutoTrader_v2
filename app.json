@@ -50,6 +50,11 @@
     "runtimeVersion": {
       "policy": "appVersion"
     },
+    "extra": {
+      "eas": {
+        "projectId": "9d592a54-1b6d-4bd5-8fc1-34286e3b4a13"
+      }
+    },
     "owner": "verzek"
   }
 }
