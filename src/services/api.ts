@@ -6,7 +6,7 @@ const API_URL = 'https://api.verzekinnovative.com';
 // Create axios instance
 const api: AxiosInstance = axios.create({
   baseURL: API_URL,
-  timeout: 30000,
+  timeout: 10000, // Reduced from 30s to 10s for faster response
   headers: {
     'Content-Type': 'application/json',
   },
@@ -35,8 +35,11 @@ export const tokenManager = {
   },
 
   async setTokens(accessToken: string, refreshToken: string): Promise<void> {
-    await SecureStore.setItemAsync(ACCESS_TOKEN_KEY, accessToken);
-    await SecureStore.setItemAsync(REFRESH_TOKEN_KEY, refreshToken);
+    // Store tokens in parallel for faster execution
+    await Promise.all([
+      SecureStore.setItemAsync(ACCESS_TOKEN_KEY, accessToken),
+      SecureStore.setItemAsync(REFRESH_TOKEN_KEY, refreshToken),
+    ]);
   },
 
   async clearTokens(): Promise<void> {

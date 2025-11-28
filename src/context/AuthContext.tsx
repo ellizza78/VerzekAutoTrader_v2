@@ -65,7 +65,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
       return { ok: false, error: response.error || 'Registration failed' };
     } catch (error: any) {
-      console.error('Registration error:', error);
       const errorMessage = error.response?.data?.error 
         || error.message 
         || (error.response?.status === 400 ? 'Invalid registration data' : 'Network error. Please check your connection.');
